@@ -13,6 +13,10 @@ var PORT = process.env.PORT || 8088;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.get("/", function(req, res) {
+  res.json(path.join(__dirname, "public/home.html"));
+});
+
 
 // ROUTES
 require("./app/routes/apiRoutes")(app);
